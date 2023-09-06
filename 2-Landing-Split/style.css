@@ -1,0 +1,112 @@
+@import url('https://fonts.google.com/css2?family=Poppins:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: darkslategray;
+}
+
+.box{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.box.left {
+    left: 0;
+    background: url('mac.jpg');
+}
+
+.box.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92,90,235,0.7);
+}
+
+.box.right {
+    right: 0;
+    background: url('iphone.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box.left .button:hover {
+    background-color: rgba(92,90,235,1);
+    border-color: rgba(92,90,235,1);
+}
+
+.box.right .button:hover {
+    background-color: rgba(72,68,68,1);
+    border-color: rgba(72,68,68,1);
+}
+
+.left-hover .left {
+    width: 75%;
+}
+
+.left-hover .right {
+    width: 25%;
+}
+
+.right-hover .right {
+    width: 75%;
+}
+
+.right-hover .left {
+    width: 25%;
+}
+
+.box.right,
+.box.left,
+.box.right::before,
+.box.left::before{
+    transition : all 1500ms ease-in-out;
+}
+
+.box.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72,68,68,0.8);
+}
+
+h1 {
+    font-size:  4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    border: 2px solid #fff;
+    background-color: transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: absolute; 
+    transform: translateX(-50%);
+    left : 50%;
+    top: calc(30% + 4rem + 10px); 
+}
+
